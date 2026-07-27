@@ -1,0 +1,515 @@
+/*======================================
+EMPLOYEE DETAIL
+======================================*/
+
+.employee-detail{
+
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+
+}
+
+.employee-profile{
+
+    text-align:center;
+    padding-bottom:22px;
+    border-bottom:1px solid #ECECEC;
+
+}
+
+.employee-avatar{
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--green),
+        #5FBF8F
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:38px;
+
+}
+
+.employee-profile h2{
+
+    margin:0;
+
+    font-size:26px;
+
+    color:var(--dark);
+
+}
+
+.employee-profile p{
+
+    margin:8px 0 16px;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+.employee-status{
+
+    display:inline-block;
+
+    padding:7px 18px;
+
+    border-radius:30px;
+
+    background:#E8F7EE;
+
+    color:var(--green);
+
+    font-weight:600;
+
+    font-size:13px;
+
+}
+
+/*======================================
+EMPLOYEE STATUS COLOR
+======================================*/
+
+.employee-status.status-active{
+
+    background:#E8F7EE;
+
+    color:#1E8E5A;
+
+}
+
+.employee-status.status-leave{
+
+    background:#FFF5D8;
+
+    color:#C28A00;
+
+}
+
+.employee-status.status-inactive{
+
+    background:#FDECEC;
+
+    color:#D93025;
+
+}
+
+.employee-info{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px 26px;
+
+}
+
+.employee-info div{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.employee-info strong{
+
+    font-size:12px;
+
+    color:#888;
+
+    margin-bottom:5px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.employee-info span{
+
+    color:var(--dark);
+
+    font-size:15px;
+
+    font-weight:500;
+
+    word-break:break-word;
+
+}
+
+/*======================================
+EMPLOYEE ITEM
+======================================*/
+
+.employee-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:#FAFBFC;
+
+    transition:.2s;
+
+}
+
+.employee-item:hover{
+
+    background:#F2F7F4;
+
+}
+
+.employee-item-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#EDF6F0;
+
+    color:var(--green);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:17px;
+
+}
+
+.employee-item-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.employee-item-content strong{
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    color:#888;
+
+    letter-spacing:.5px;
+
+}
+
+.employee-item-content span{
+
+    margin-top:4px;
+
+    font-size:15px;
+
+    color:#333;
+
+}
+
+/*======================================
+HR EMPLOYEE
+======================================*/
+
+.employee-name{
+
+    cursor:pointer;
+
+    color:var(--green);
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.employee-name:hover{
+
+    opacity:.8;
+
+    text-decoration:underline;
+
+}
+
+/*======================================
+TABLET
+======================================*/
+
+@media (max-width:1024px){
+
+.employee-detail{
+
+    gap:24px;
+
+}
+
+.employee-profile{
+
+    padding-bottom:20px;
+
+}
+
+.employee-avatar{
+
+    width:82px;
+    height:82px;
+
+    font-size:34px;
+
+    margin-bottom:16px;
+
+}
+
+.employee-profile h2{
+
+    font-size:24px;
+
+}
+
+.employee-profile p{
+
+    font-size:14px;
+
+}
+
+.employee-info{
+
+    gap:16px 20px;
+
+}
+
+.employee-info span{
+
+    font-size:14px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width:768px){
+
+.employee-detail{
+
+    gap:16px;
+
+}
+
+.employee-profile{
+
+    padding-bottom:16px;
+
+}
+
+.employee-avatar{
+
+    width:64px;
+
+    height:64px;
+
+    font-size:26px;
+
+    margin-bottom:12px;
+
+}
+
+.employee-profile h2{
+
+    font-size:18px;
+
+}
+
+.employee-profile p{
+
+    font-size:12px;
+
+    margin:4px 0 10px;
+
+}
+
+.employee-status{
+
+    padding:5px 14px;
+
+    font-size:11px;
+
+}
+
+/*============================*/
+
+.employee-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+/*============================*/
+
+.employee-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    background:#F8F8F8;
+
+}
+
+.employee-item-icon{
+
+    width:34px;
+
+    height:34px;
+
+    flex-shrink:0;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:14px;
+
+}
+
+.employee-item-content{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.employee-item-content strong{
+
+    display:block;
+
+    margin-bottom:2px;
+
+    font-size:10px;
+
+}
+
+.employee-item-content span{
+
+    display:block;
+
+    font-size:13px;
+
+    word-break:break-word;
+
+}
+
+}
+
+/*======================================
+SMALL MOBILE
+======================================*/
+
+@media (max-width:480px){
+
+.employee-detail{
+
+    gap:18px;
+
+}
+
+.employee-avatar{
+
+    width:64px;
+    height:64px;
+
+    font-size:26px;
+
+}
+
+.employee-profile h2{
+
+    font-size:19px;
+
+}
+
+.employee-profile p{
+
+    font-size:12px;
+
+}
+
+.employee-status{
+
+    padding:5px 14px;
+
+    font-size:11px;
+
+}
+
+.employee-info{
+
+    gap:12px;
+
+}
+
+.employee-info strong{
+
+    font-size:10px;
+
+}
+
+.employee-info span{
+
+    font-size:13px;
+
+}
+
+.employee-name{
+
+    font-size:13px;
+
+}
+
+}

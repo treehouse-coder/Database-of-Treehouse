@@ -1,0 +1,251 @@
+/*======================================
+TABLE CONTAINER
+======================================*/
+
+.table-container{
+
+    width:100%;
+
+    overflow:auto;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.05);
+
+}
+
+
+/*======================================
+TABLE
+======================================*/
+
+.expense-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:14px;
+
+    background:#FFFFFF;
+
+}
+
+
+/*======================================
+HEADER
+======================================*/
+
+.expense-table thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    background:#F8F9FB;
+
+}
+
+.expense-table th{
+
+    padding:14px 16px;
+
+    text-align:left;
+
+    font-weight:600;
+
+    color:#5E6670;
+
+    border-bottom:1px solid #E8EBEF;
+
+    white-space:nowrap;
+
+}
+
+
+/*======================================
+BODY
+======================================*/
+
+.expense-table td{
+
+    padding:13px 16px;
+
+    border-bottom:1px solid #F1F2F4;
+
+    color:#40454B;
+
+    vertical-align:middle;
+
+}
+
+.expense-table tbody tr{
+
+    transition:.20s;
+
+}
+
+.expense-table tbody tr:nth-child(even){
+
+    background:#FCFCFD;
+
+}
+
+.expense-table tbody tr:hover{
+
+    background:#F5FBF7;
+
+}
+
+
+/*======================================
+LAST ROW
+======================================*/
+
+.expense-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+
+/*======================================
+ALIGN
+======================================*/
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+
+/*======================================
+SCROLLBAR
+======================================*/
+
+.table-container::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.table-container::-webkit-scrollbar-thumb{
+
+    background:#D5D9DF;
+
+    border-radius:20px;
+
+}
+
+.table-container::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/*======================================
+TABLET
+======================================*/
+
+@media (max-width:1024px){
+
+.expense-table{
+
+    font-size:13px;
+
+}
+
+.expense-table th,
+
+.expense-table td{
+
+    padding:12px 14px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width:768px){
+
+.table-container{
+
+    border-radius:16px;
+
+}
+
+.expense-table{
+
+    min-width:760px;
+
+    font-size:13px;
+
+}
+
+.expense-table th{
+
+    padding:11px 12px;
+
+}
+
+.expense-table td{
+
+    padding:10px 12px;
+
+}
+
+}
+
+
+/*======================================
+SMALL MOBILE
+======================================*/
+
+@media (max-width:480px){
+
+.table-container{
+
+    border-radius:14px;
+
+}
+
+.expense-table{
+
+    min-width:720px;
+
+    font-size:12px;
+
+}
+
+.expense-table th{
+
+    padding:10px;
+
+}
+
+.expense-table td{
+
+    padding:9px 10px;
+
+}
+
+}

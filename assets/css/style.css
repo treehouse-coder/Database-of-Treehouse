@@ -1,0 +1,162 @@
+/*======================================
+GOOGLE FONT
+======================================*/
+
+@charset "UTF-8";
+
+
+/*======================================
+CSS IMPORT
+======================================*/
+
+@import url("layout.css");
+@import url("components.css");
+@import url("pages.css");
+@import url("responsive.css");
+@import url("omset.css");
+@import url("expense.css");
+@import url("hr.css");
+@import url("hr/comm.css");
+@import url("hr/employ.css");
+
+/*======================================
+ROOT
+======================================*/
+
+:root{
+
+    /* Brand */
+
+    --green:#4F6B43;
+
+    --green-dark:#3F5635;
+
+    --green-light:#6F8D61;
+
+    /* Background */
+
+    --background:#F8F6F2;
+
+    --white:#FFFFFF;
+
+    /* Text */
+
+    --text:#333333;
+
+    --text-light:#777777;
+
+    /* Border */
+
+    --border:#E6E6E6;
+
+    /* Shadow */
+
+    --shadow:0 5px 15px rgba(0,0,0,.08);
+
+    /* Radius */
+
+    --radius:16px;
+
+    /* Sidebar */
+
+    --sidebar-width:260px;
+
+    /* Header */
+
+    --header-height:70px;
+
+}
+
+
+/*======================================
+RESET
+======================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+/*======================================
+GLOBAL
+======================================*/
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+button,
+input,
+select,
+textarea{
+
+    font:inherit;
+
+    outline:none;
+
+    border:none;
+
+}
+
+
+button{
+
+    cursor:pointer;
+
+}
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+table{
+
+    border-collapse:collapse;
+
+    width:100%;
+
+}

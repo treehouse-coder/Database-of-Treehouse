@@ -1,0 +1,570 @@
+/*======================================
+APPLICATION LAYOUT
+======================================*/
+
+body{
+
+    display:flex;
+
+    background:#F5F7FA;
+
+    color:var(--text);
+
+}
+
+
+/*======================================
+SIDEBAR
+======================================*/
+
+.sidebar{
+
+    width:200px;
+
+    height:calc(100vh - 24px);
+
+    position:fixed;
+
+    top:12px;
+
+    left:12px;
+
+    background:var(--green);
+
+    color:var(--white);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18),
+        0 8px 18px rgba(0,0,0,.08);
+
+    z-index:2000;
+
+}
+
+
+/*======================================
+LOGO
+======================================*/
+
+.logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:24px 0 18px;
+
+}
+
+.logo img{
+
+    width:78px;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+
+/*======================================
+MENU
+======================================*/
+
+.menu{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    padding:10px;
+
+}
+
+.menu a{
+
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 16px;
+
+    border-radius:12px;
+
+    color:rgba(255,255,255,.88);
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+.menu a:hover{
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateX(3px);
+
+}
+
+.menu a.active{
+
+    background:rgba(255,255,255,.18);
+
+    color:#FFF;
+
+    font-weight:600;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.12);
+
+}
+
+.menu i{
+
+    width:18px;
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+
+/*======================================
+MAIN
+======================================*/
+
+.main{
+
+    flex:1;
+
+    margin-left:224px;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding-right:12px;
+
+}
+
+
+/*======================================
+HEADER
+======================================*/
+
+.header{
+
+    position:sticky;
+
+    top:12px;
+
+    z-index:1000;
+
+    margin:12px 12px 0 0;
+
+    background:#FFF;
+
+    border-radius:18px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.06);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:18px 24px;
+
+    min-height:72px;
+
+    transition:
+        top .25s ease,
+        padding .25s ease,
+        min-height .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.header h1{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    line-height:1.2;
+
+    transition:
+        font-size .25s,
+        transform .25s;
+
+}
+
+.header-date{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+    transition:
+        opacity .25s,
+        transform .25s;
+
+}
+
+
+/*======================================
+HEADER FILTER
+======================================*/
+
+.header-filter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.header-filter select{
+
+    min-width:150px;
+
+    height:40px;
+
+    padding:0 12px;
+
+    border-radius:10px;
+
+    border:1px solid #DDD;
+
+    background:#FFF;
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+}
+
+
+/*======================================
+CONTENT
+======================================*/
+
+.content{
+
+    flex:1;
+
+    padding:18px 0 24px;
+
+}
+
+
+/*======================================
+HEADER STICKY
+======================================*/
+
+.header.sticky{
+
+    top:8px;
+
+    padding:14px 22px;
+
+    min-height:62px;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.08);
+
+}
+
+.header.sticky h1{
+
+    font-size:21px;
+
+    transform:scale(.96);
+
+}
+
+.header.sticky .header-date{
+
+    opacity:.75;
+
+    transform:translateY(-2px);
+
+}
+
+.header.sticky .header-filter{
+
+    transform:scale(.97);
+
+}
+
+.header .btn,
+
+.header .form-control{
+
+    transition:
+        height .25s,
+        font-size .25s,
+        padding .25s;
+
+}
+
+.header.sticky .btn,
+
+.header.sticky .form-control{
+
+    height:36px;
+
+    font-size:13px;
+
+}
+
+
+/*======================================
+TABLET
+======================================*/
+
+@media (max-width:1024px){
+
+.sidebar{
+
+    width:180px;
+
+}
+
+.main{
+
+    margin-left:204px;
+
+}
+
+.header{
+
+    gap:16px;
+
+    padding:16px 20px;
+
+}
+
+.header h1{
+
+    font-size:22px;
+
+}
+
+.header-filter{
+
+    flex-wrap:wrap;
+
+}
+
+.header-filter select{
+
+    min-width:130px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width:768px){
+
+body{
+
+    display:block;
+
+}
+
+.sidebar{
+
+    width:76px;
+
+    border-radius:16px;
+
+}
+
+.logo{
+
+    padding:18px 0;
+
+}
+
+.logo img{
+
+    width:52px;
+
+}
+
+.menu{
+
+    padding:8px;
+
+}
+
+.menu a{
+
+    justify-content:center;
+
+    padding:0;
+
+    gap:0;
+
+}
+
+.menu a span{
+
+    display:none;
+
+}
+
+.menu i{
+
+    width:auto;
+
+    font-size:18px;
+
+}
+
+.main{
+
+    margin-left:100px;
+
+    padding-right:8px;
+
+}
+
+.header{
+
+    margin:8px 8px 0 0;
+
+    padding:14px 16px;
+
+    min-height:64px;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+.header h1{
+
+    font-size:20px;
+
+}
+
+.header-filter{
+
+    width:100%;
+
+    flex-wrap:wrap;
+
+}
+
+.header-filter select{
+
+    flex:1;
+
+    min-width:120px;
+
+}
+
+.content{
+
+    padding:12px 0 18px;
+
+}
+
+}
+
+
+/*======================================
+SMALL MOBILE
+======================================*/
+
+@media (max-width:480px){
+
+.sidebar{
+
+    width:64px;
+
+}
+
+.logo img{
+
+    width:42px;
+
+}
+
+.main{
+
+    margin-left:84px;
+
+}
+
+.header{
+
+    padding:12px;
+
+}
+
+.header h1{
+
+    font-size:18px;
+
+}
+
+.header-filter{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.header-filter select{
+
+    width:100%;
+
+}
+
+}

@@ -1,0 +1,1401 @@
+/*======================================
+COMPONENTS
+TREEHOUSE POS
+======================================*/
+
+
+/*======================================
+CARD
+======================================*/
+
+.card{
+
+    background:#FFFFFF;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.08);
+
+}
+
+
+/*======================================
+BUTTON
+======================================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    height:42px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--green);
+
+    color:#FFFFFF;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    background:var(--green-dark);
+
+    transform:translateY(-1px);
+
+}
+
+.btn:active{
+
+    transform:translateY(0);
+
+}
+
+.btn-outline{
+
+    background:#FFFFFF;
+
+    color:var(--green);
+
+    border:1px solid var(--green);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--green);
+
+    color:#FFFFFF;
+
+}
+
+
+/*======================================
+FORM
+======================================*/
+
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.form-control{
+
+    width:100%;
+
+    height:44px;
+
+    padding:0 14px;
+
+    border:1px solid #E2E2E2;
+
+    border-radius:12px;
+
+    background:#FFFFFF;
+
+    transition:.25s;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--green);
+
+    box-shadow:
+        0 0 0 4px rgba(79,107,67,.08);
+
+}
+
+textarea.form-control{
+
+    min-height:120px;
+
+    padding:14px;
+
+    resize:vertical;
+
+}
+
+
+/*======================================
+BADGE
+======================================*/
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:5px 12px;
+
+    border-radius:30px;
+
+    background:#EAF7EF;
+
+    color:var(--green);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/*======================================
+TABLE
+======================================*/
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow:auto;
+
+    border-radius:18px;
+
+    background:#FFFFFF;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:
+
+        0 8px 24px rgba(0,0,0,.05);
+
+}
+
+.table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#FFFFFF;
+
+    font-size:14px;
+
+}
+
+.table thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:3;
+
+    background:#F7F8FA;
+
+}
+
+.table th{
+
+    padding:14px 16px;
+
+    font-weight:600;
+
+    color:#666;
+
+    text-align:left;
+
+    white-space:nowrap;
+
+    border-bottom:1px solid #E8E8E8;
+
+}
+
+.table td{
+
+    padding:13px 16px;
+
+    border-bottom:1px solid #F1F1F1;
+
+    vertical-align:middle;
+
+}
+
+.table tbody tr{
+
+    transition:.18s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#F8FBF9;
+
+}
+
+.table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+
+/*======================================
+TABLE SCROLLBAR
+======================================*/
+
+.table-wrapper::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#D6D9DD;
+
+    border-radius:20px;
+
+}
+
+.table-wrapper::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*======================================
+LOADING OVERLAY
+======================================*/
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+
+    z-index:99990;
+
+}
+
+.loading-overlay.show{
+
+    display:flex;
+
+}
+
+.loading-box{
+
+    min-width:260px;
+
+    padding:34px 40px;
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 24px 60px rgba(0,0,0,.18);
+
+}
+
+.loading-spinner{
+
+    width:56px;
+
+    height:56px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:4px solid #ECECEC;
+
+    border-top:4px solid var(--green);
+
+    animation:loadingSpin .8s linear infinite;
+
+}
+
+.loading-box h3{
+
+    margin:20px 0 6px;
+
+    color:var(--green);
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.loading-box p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+@keyframes loadingSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*======================================
+SUCCESS MODAL
+======================================*/
+
+.success-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.25s;
+
+    z-index:99995;
+
+}
+
+.success-modal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.success-card{
+
+    width:430px;
+
+    max-width:92vw;
+
+    padding:34px;
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 28px 70px rgba(0,0,0,.22);
+
+    animation:modalScale .22s ease;
+
+}
+
+.success-icon{
+
+    width:82px;
+
+    height:82px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#EAF8EF;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.success-icon i{
+
+    font-size:42px;
+
+    color:#2E8B57;
+
+}
+
+.success-card h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.success-file{
+
+    margin:18px 0 30px;
+
+    color:#666;
+
+    word-break:break-word;
+
+}
+
+.success-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.success-buttons .btn{
+
+    min-width:150px;
+
+}
+
+
+/*======================================
+MODAL
+======================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(4px);
+
+    -webkit-backdrop-filter:blur(4px);
+
+    z-index:99999;
+
+}
+
+.modal.show{
+
+    display:flex;
+
+    animation:modalFade .18s ease;
+
+}
+
+.modal-box{
+
+    width:min(860px,92vw);
+
+    max-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    box-shadow:
+
+        0 28px 80px rgba(0,0,0,.22);
+
+    animation:modalScale .22s ease;
+
+}
+
+
+/*======================================
+MODAL HEADER
+======================================*/
+
+.modal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 22px;
+
+    background:#FFFFFF;
+
+    border-bottom:1px solid #ECECEC;
+
+    flex-shrink:0;
+
+}
+
+.modal-header h2{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#222;
+
+    flex:1;
+
+}
+
+#employeeModalHeaderAction{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.modal-close{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    color:#777;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    margin-left:10px;
+
+}
+
+.modal-close:hover{
+
+    background:#F5F5F5;
+
+    color:#000;
+
+}
+
+
+/*======================================
+MODAL BODY
+======================================*/
+
+/*======================================
+MODAL BODY
+======================================*/
+
+#modalBody{
+
+    flex:1;
+
+    min-width:0;
+
+    min-height:0;
+
+    padding:22px;
+
+    background:#FFFFFF;
+
+    overflow:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+#modalBody table{
+
+    width:max-content;
+
+    min-width:100%;
+
+}
+
+
+/*======================================
+MODAL FOOTER
+======================================*/
+
+.modal-action{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    padding:18px 22px;
+
+    background:#FFFFFF;
+
+    border-top:1px solid #ECECEC;
+
+    flex-shrink:0;
+
+}
+
+/*======================================
+SIGNATURE
+======================================*/
+
+.signature-box{
+
+    width:min(760px,94vw);
+
+}
+
+.signature-body{
+
+    padding:20px;
+
+}
+
+#signatureCanvas{
+
+    width:100%;
+
+    height:260px;
+
+    background:#FFFFFF;
+
+    border:2px dashed #CCCCCC;
+
+    border-radius:14px;
+
+    cursor:crosshair;
+
+    touch-action:none;
+
+}
+
+.signature-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    padding:20px;
+
+}
+
+
+/*======================================
+ANIMATION
+======================================*/
+
+@keyframes modalFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes modalScale{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/*======================================
+TABLET
+======================================*/
+
+@media (max-width:1024px){
+
+.card{
+
+    padding:18px;
+
+}
+
+.table{
+
+    font-size:13px;
+
+}
+
+.table th{
+
+    padding:12px 14px;
+
+}
+
+.table td{
+
+    padding:11px 14px;
+
+}
+
+.btn{
+
+    height:40px;
+
+    padding:0 18px;
+
+    font-size:13px;
+
+}
+
+.form-control{
+
+    height:42px;
+
+}
+
+.modal-box{
+
+    width:min(96vw,760px);
+
+    max-height:92vh;
+
+}
+
+.success-card{
+
+    width:390px;
+
+}
+
+.signature-box{
+
+    width:min(96vw,720px);
+
+}
+
+#signatureCanvas{
+
+    height:220px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width:768px){
+
+.card{
+
+    padding:16px;
+
+    border-radius:18px;
+
+}
+
+
+/*======================================
+TABLE
+======================================*/
+
+.table-wrapper{
+
+    border-radius:16px;
+
+}
+
+.table{
+
+    min-width:720px;
+
+    font-size:13px;
+
+}
+
+.table th{
+
+    padding:10px 12px;
+
+}
+
+.table td{
+
+    padding:10px 12px;
+
+}
+
+
+/*======================================
+MOBILE MODAL TABLE
+======================================*/
+
+
+
+    #modalBody{
+
+        padding:16px;
+
+        overflow-x:auto;
+
+        overflow-y:auto;
+
+    }
+
+
+    /*======================================
+MOBILE PREVIEW TABLE
+======================================*/
+
+
+
+    .preview-table-wrapper{
+
+        overflow-x:auto;
+
+    }
+
+    .preview-table{
+
+        min-width:max-content;
+
+    }
+
+
+
+
+
+
+/*======================================
+BUTTON
+======================================*/
+
+.btn{
+
+    width:100%;
+
+    height:42px;
+
+    font-size:13px;
+
+}
+
+.btn-outline{
+
+    width:100%;
+
+}
+
+
+/*======================================
+FORM
+======================================*/
+
+.form-group{
+
+    margin-bottom:16px;
+
+}
+
+.form-control{
+
+    height:42px;
+
+    font-size:13px;
+
+}
+
+textarea.form-control{
+
+    min-height:100px;
+
+}
+
+
+/*======================================
+MODAL
+======================================*/
+
+.modal{
+
+    padding:0;
+
+    align-items:flex-end;
+
+}
+
+
+.modal-box{
+
+    width:100%;
+
+    max-width:none;
+
+    height:auto;
+
+    max-height:82vh;
+
+    border-radius:18px 18px 0 0;
+
+    animation:modalMobile .25s ease;
+
+}
+
+
+/*======================================
+HEADER
+======================================*/
+
+.modal-header{
+
+    padding:10px 14px;
+
+}
+
+.modal-header h2{
+
+    font-size:16px;
+
+}
+
+
+/*======================================
+BODY
+======================================*/
+
+#modalBody{
+
+    flex:1;
+
+    padding:12px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+/*======================================
+MODAL TABLE
+======================================*/
+
+#modalBody table{
+
+    width:100%;
+
+    min-width:100%;
+
+    font-size:12px;
+
+}
+
+#modalBody th{
+
+    padding:8px;
+
+}
+
+#modalBody td{
+
+    padding:6px;
+
+    font-size:12px;
+
+}
+
+#modalBody td:first-child{
+
+    width:95px;
+
+    font-size:11px;
+
+    color:#777;
+
+}
+
+
+/*======================================
+FOOTER
+======================================*/
+
+.modal-action{
+
+    padding:10px 12px;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    border-top:1px solid #ECECEC;
+
+    background:#FFF;
+
+}
+
+/*======================================
+SUCCESS
+======================================*/
+
+.success-card{
+
+    width:100%;
+
+    margin:16px;
+
+    padding:28px 22px;
+
+    border-radius:20px;
+
+}
+
+.success-icon{
+
+    width:68px;
+
+    height:68px;
+
+}
+
+.success-icon i{
+
+    font-size:34px;
+
+}
+
+.success-card h2{
+
+    font-size:21px;
+
+}
+
+.success-file{
+
+    font-size:13px;
+
+}
+
+.success-buttons{
+
+    flex-direction:column;
+
+}
+
+.success-buttons .btn{
+
+    width:100%;
+
+}
+
+
+/*======================================
+LOADING
+======================================*/
+
+.loading-box{
+
+    width:220px;
+
+    min-width:auto;
+
+    padding:24px;
+
+}
+
+.loading-spinner{
+
+    width:44px;
+
+    height:44px;
+
+}
+
+
+/*======================================
+SIGNATURE
+======================================*/
+
+.signature-body{
+
+    padding: 20px;
+
+}
+
+#signatureCanvas{
+
+    height:180px;
+
+}
+
+.signature-footer{
+
+    padding:14px;
+
+    flex-direction:column;
+
+}
+
+.signature-footer .btn{
+
+    width:100%;
+
+}
+
+}
+
+
+/*======================================
+SMALL MOBILE
+======================================*/
+
+@media (max-width:480px){
+
+.card{
+
+    padding:14px;
+
+}
+
+.table{
+
+    min-width:680px;
+
+    font-size:12px;
+
+}
+
+.table th{
+
+    padding:9px 10px;
+
+}
+
+.table td{
+
+    padding:9px 10px;
+
+}
+
+.btn{
+
+    height:40px;
+
+    font-size:12px;
+
+}
+
+.form-control{
+
+    height:40px;
+
+    font-size:12px;
+
+}
+
+
+/*======================================
+MODAL
+======================================*/
+
+.modal-header{
+
+    padding:12px 14px;
+
+}
+
+.modal-header h2{
+
+    font-size:16px;
+
+}
+
+#modalBody{
+
+    padding:14px;
+
+}
+
+.modal-action{
+
+    padding:12px 14px;
+
+}
+
+
+/*======================================
+SUCCESS
+======================================*/
+
+.success-card{
+
+    padding:22px 18px;
+
+}
+
+.success-card h2{
+
+    font-size:19px;
+
+}
+
+.success-file{
+
+    font-size:12px;
+
+}
+
+
+/*======================================
+SIGNATURE
+======================================*/
+
+#signatureCanvas{
+
+    height:160px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE ANIMATION
+======================================*/
+
+@keyframes modalMobile{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(100%);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

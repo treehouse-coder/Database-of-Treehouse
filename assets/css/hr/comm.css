@@ -1,0 +1,352 @@
+/*======================================
+HR COMMISSION
+======================================*/
+
+.commission-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+
+/*======================================
+COMMISSION CARD
+======================================*/
+
+.commission-card{
+
+    background:#FFFFFF;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    border-radius:18px;
+
+    box-shadow:
+
+        0 10px 24px rgba(0,0,0,.05);
+
+    text-align:center;
+
+    padding:30px;
+
+    transition:.25s;
+
+}
+
+.commission-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 18px 38px rgba(0,0,0,.08);
+
+}
+
+
+/*======================================
+ICON
+======================================*/
+
+.commission-icon{
+
+    width:72px;
+
+    height:72px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:#F3F7F4;
+
+    color:var(--green);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+}
+
+
+.commission-card h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+
+/*======================================
+PERIOD
+======================================*/
+
+.commission-period{
+
+    margin:22px 0;
+
+    padding:14px;
+
+    background:#F8F9FB;
+
+    border-radius:14px;
+
+    border:1px solid rgba(0,0,0,.04);
+
+}
+
+.commission-period span{
+
+    display:block;
+
+    font-size:12px;
+
+    color:#888;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+.commission-period strong{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--green);
+
+}
+
+
+/*======================================
+BUTTON
+======================================*/
+
+.commission-card .btn{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+}
+
+
+/*======================================
+PREVIEW
+======================================*/
+
+.preview-container{
+
+    display:none;
+
+    margin-top:22px;
+
+    padding-top:20px;
+
+    border-top:1px solid #ECECEC;
+
+    overflow:auto;
+
+}
+
+.preview-container.show{
+
+    display:block;
+
+}
+
+.preview-container table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+/*======================================
+TABLET
+======================================*/
+
+@media (max-width:1024px){
+
+.commission-grid{
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+}
+
+.commission-card{
+
+    padding:26px;
+
+}
+
+.commission-icon{
+
+    width:68px;
+
+    height:68px;
+
+    font-size:26px;
+
+}
+
+.commission-card h3{
+
+    font-size:20px;
+
+}
+
+.commission-period strong{
+
+    font-size:20px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width:768px){
+
+.commission-grid{
+
+    gap:18px;
+
+}
+
+.commission-card{
+
+    padding:22px;
+
+    border-radius:16px;
+
+}
+
+.commission-icon{
+
+    width:62px;
+
+    height:62px;
+
+    margin-bottom:16px;
+
+    font-size:24px;
+
+}
+
+.commission-card h3{
+
+    font-size:18px;
+
+}
+
+.commission-period{
+
+    margin:18px 0;
+
+    padding:12px;
+
+}
+
+.commission-period span{
+
+    font-size:11px;
+
+}
+
+.commission-period strong{
+
+    font-size:18px;
+
+}
+
+.preview-container{
+
+    margin-top:18px;
+
+    padding-top:18px;
+
+}
+
+.preview-container table{
+
+    min-width:700px;
+
+}
+
+}
+
+
+/*======================================
+SMALL MOBILE
+======================================*/
+
+@media (max-width:480px){
+
+.commission-card{
+
+    padding:18px;
+
+}
+
+.commission-icon{
+
+    width:56px;
+
+    height:56px;
+
+    font-size:22px;
+
+}
+
+.commission-card h3{
+
+    font-size:17px;
+
+}
+
+.commission-period{
+
+    padding:10px;
+
+}
+
+.commission-period strong{
+
+    font-size:17px;
+
+}
+
+.preview-container table{
+
+    min-width:650px;
+
+}
+
+}

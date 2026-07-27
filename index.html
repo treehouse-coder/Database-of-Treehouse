@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Treehouse POS</title>
+
+    <meta name="description" content="Treehouse POS Dashboard">
+
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    
+</head>
+
+<body>
+
+    <!-- ======================================
+         SIDEBAR
+    ======================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+    <img src="assets/images/logo.png"
+         alt="Treehouse Massage Logo">
+
+</div>
+
+        <nav class="menu">
+
+    <a href="#" class="active" data-page="dashboard">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Dashboard</span>
+
+    </a>
+
+    <a href="#" data-page="omset">
+
+        <i class="fa-solid fa-sack-dollar"></i>
+
+        <span>Omset</span>
+
+    </a>
+
+    <a href="#" data-page="expense">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span>Expense</span>
+
+    </a>
+
+    <a href="#" data-page="hr">
+
+        <i class="fa-solid fa-users"></i>
+
+        <span>HR Manager</span>
+
+    </a>
+
+    <a href="#" data-page="laporan">
+
+    <i class="fa-solid fa-file-lines"></i>
+
+    <span>Laporan</span>
+
+    </a>
+
+</nav>
+
+    </aside>
+
+    <!-- ======================================
+         MAIN
+    ======================================= -->
+
+    <main class="main">
+
+        <!-- Header -->
+
+        <header class="header">
+
+    <div class="header-left">
+
+        <h1>Dashboard</h1>
+
+        <div class="header-date"></div>
+
+    </div>
+
+
+    <div class="header-filter">
+
+
+        <select id="filterBranch"
+                class="form-control">
+
+            <option value="KARAWACI" selected>
+            Karawaci
+            </option>
+
+            <option value="GLAZE">
+            Gading Serpong
+            </option>
+        </select>
+
+
+        <select id="filterPeriod"
+        class="form-control">
+
+
+
+        </select>
+
+
+        <button id="refreshData"
+                class="btn">
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+
+    </div>
+
+</header>
+
+        <!-- Content -->
+
+        <section class="content">
+
+            <!-- Dashboard -->
+
+            <section class="content">
+
+    <section id="dashboard"
+             class="page active">
+
+    </section>
+
+</section>
+
+           
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+
+    <script src="assets/js/utils.js"></script>
+
+    <script src="assets/js/api.js"></script>
+
+    <script src="assets/js/page.js"></script>
+
+    <script src="assets/js/successModal.js"></script>
+
+    <script src="assets/js/hr/signatureModal.js"></script>
+
+    <script src="assets/js/loading.js"></script>
+
+    <script src="assets/js/components/modal.js"></script>
+
+    
+    <script src="assets/js/menu.js"></script>
+
+    <script src="assets/js/filter.js"></script>
+
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/pages/omset.js"></script>
+
+    <script src="assets/js/pages/expense.js"></script>
+
+    <script src="assets/js/hr/meal.js"></script>
+
+    <script src="assets/js/hr/commission.js"></script>
+
+    <script src="assets/js/hr/employeePage.js"></script>
+
+    <script src="assets/js/hr/employformrenderer.js"></script>
+
+    <script src="assets/js/hr/employeeFormSave.js"></script>
+    
+    <script src="assets/js/hr/employeeForm.js"></script>
+
+    <script src="assets/js/hr/employeeModal.js"></script>
+
+    <script src="assets/js/hr/employeeDetail.js"></script>
+
+
+    <script src="assets/js/hr/employeeTableRenderer.js"></script>
+
+    <script src="assets/js/hr/employeeFilter.js"></script>
+
+    <script src="assets/js/hr/employeeEvent.js"></script>
+
+    <script src="assets/js/hr/employee.js"></script>
+
+    <script src="assets/js/hr/hrSlip.js"></script>
+
+    <script src="assets/js/pages/hr.js"></script>
+
+    <script src="assets/js/pages/laporan.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/render/employeeRenderer.js"></script>
+
+    
+
+    
+
+  
+
+
+
+     <!-- Tabel modal -->
+
+    <div id="tableModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+    <h2 id="modalTitle">
+
+        Preview
+
+    </h2>
+
+    <div class="modal-action">
+
+    <button
+        id="modalSignature"
+        class="btn"
+        style="display:none;">
+
+        <i class="fa-solid fa-signature"></i>
+
+        Tanda Tangan
+
+    </button>
+
+    <button
+        id="modalPrint"
+        class="btn">
+
+        <i class="fa-solid fa-print"></i>
+
+        Print PDF
+
+    </button>
+
+    <button
+        id="modalClose">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+</div>
+
+</div>
+        <div id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!--======================================
+EMPLOYEE MODAL
+=======================================-->
+
+<div id="employeeModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2 id="employeeModalTitle">
+                Detail Karyawan
+            </h2>
+
+            <div id="employeeModalHeaderAction"></div>
+
+            <button
+                id="employeeModalClose"
+                class="modal-close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div id="employeeModalBody">
+
+        </div>
+
+        <div
+            id="employeeModalFooter"
+            class="modal-action">
+
+        </div>
+
+    </div>
+
+</div>
+<!--======================================
+SuccessModal
+=======================================-->
+
+<div
+    id="successModal"
+    class="success-modal">
+
+    <div class="success-card">
+
+    <button
+        id="successModalClose"
+        class="modal-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <div id="successModalBody"></div>
+
+    </div>
+
+</div>
+
+<div id="signatureModal" class="modal">
+
+    <div class="modal-box signature-box">
+
+        <div class="modal-header">
+
+    <h2>Tanda Tangan</h2>
+
+    <button
+        id="signatureClose"
+        class="modal-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+</div>
+
+        <div class="signature-body">
+
+            <canvas id="signatureCanvas"></canvas>
+
+        </div>
+
+        <div class="signature-footer">
+
+            <button
+                class="btn"
+                onclick="SignatureModal.clear()">
+
+                Hapus
+
+            </button>
+
+            <button
+                class="btn"
+                onclick="SignatureModal.save()">
+
+                Simpan
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--======================================
+LOADING OVERLAY
+=======================================-->
+
+<div id="loadingOverlay"
+     class="loading-overlay">
+
+    <div class="loading-box">
+
+        <div class="loading-spinner">
+
+        </div>
+
+        <h3>
+
+            Treehouse
+
+        </h3>
+
+        <p id="loadingText">
+
+            Loading...
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+</body>
+
+</html>
