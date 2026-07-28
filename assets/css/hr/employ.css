@@ -1,4 +1,199 @@
 /*======================================
+EMPLOYEE MODAL
+======================================*/
+
+#employeeModal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:2000;
+
+}
+
+#employeeModal.show{
+
+    display:flex;
+
+}
+
+#employeeModal .modal-box{
+
+    width:min(1000px,95vw);
+
+    max-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#FFF;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18);
+
+}
+
+#employeeModal .modal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-shrink:0;
+
+    padding:18px 22px;
+
+    border-bottom:1px solid #E5E7EB;
+
+    background:#FFF;
+
+}
+
+#employeeModal .modal-header h2{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+#employeeModalHeaderAction{
+
+    margin-left:auto;
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+#employeeModalClose{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#F3F4F6;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#employeeModalClose:hover{
+
+    background:#E5E7EB;
+
+}
+
+#employeeModalBody{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:20px;
+
+}
+
+#employeeModalFooter{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    flex-shrink:0;
+
+    padding:18px 22px;
+
+    border-top:1px solid #E5E7EB;
+
+    background:#FFF;
+
+}
+
+/*======================================
+SCROLLBAR
+======================================*/
+
+#employeeModalBody::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+#employeeModalBody::-webkit-scrollbar-track{
+
+    background:#F3F4F6;
+
+}
+
+#employeeModalBody::-webkit-scrollbar-thumb{
+
+    background:#C7CDD6;
+
+    border-radius:10px;
+
+}
+
+#employeeModalBody::-webkit-scrollbar-thumb:hover{
+
+    background:#9CA3AF;
+
+}
+
+/*======================================
+TABLE
+======================================*/
+
+#employeeModal table{
+
+    border-collapse:collapse;
+
+    min-width:900px;
+
+}
+
+#employeeModal td,
+#employeeModal th{
+
+    white-space:nowrap;
+
+}
+
+
+/*======================================
 EMPLOYEE DETAIL
 ======================================*/
 
@@ -320,6 +515,58 @@ MOBILE
 ======================================*/
 
 @media (max-width:768px){
+
+ #employeeModal{
+
+        padding:12px;
+
+        align-items:flex-start;
+
+    }
+
+    #employeeModal .modal-box{
+
+        width:100%;
+
+        max-height:95vh;
+
+        margin-top:10px;
+
+        border-radius:16px;
+
+    }
+
+    #employeeModal .modal-header{
+
+        padding:16px;
+
+    }
+
+    #employeeModal .modal-header h2{
+
+        font-size:18px;
+
+    }
+
+    #employeeModalHeaderAction{
+
+        gap:6px;
+
+    }
+
+    #employeeModalBody{
+
+        padding:16px;
+
+    }
+
+    #employeeModalFooter{
+
+        padding:16px;
+
+        flex-wrap:wrap;
+
+    }
 
 .employee-detail{
 
