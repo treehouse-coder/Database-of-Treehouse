@@ -1,44 +1,66 @@
 /*======================================
 OMSET
 ======================================*/
+.omset-total-wrapper{
 
+    display:flex;
+
+    justify-content:center;
+
+    margin:25px 0;
+
+}
 .omset-total-card{
 
-    max-width:460px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
 
-    margin:0 auto 28px;
+    width:fit-content;
 
-    padding:26px;
+    min-width:320px;
 
-    text-align:center;
+    margin:0 auto;
+
 
     background:#FFF;
 
     border-radius:18px;
 
-    border:1px solid rgba(0,0,0,.05);
+    padding:22px 40px;
+
+    min-height:135px;
+
+    border:1px solid rgba(255,255,255,.8);
 
     box-shadow:
-        0 12px 28px rgba(0,0,0,.05);
+        0 20px 45px rgba(0,0,0,.10),
+        0 8px 18px rgba(0,0,0,.06),
+        inset 0 1px 0 rgba(255,255,255,.9),
+        inset 0 -2px 4px rgba(0,0,0,.03);
 
-    transition:.25s;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 
 }
 
 .omset-total-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px);
 
     box-shadow:
-        0 18px 36px rgba(0,0,0,.08);
-
+        0 28px 60px rgba(0,0,0,.14),
+        0 12px 24px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.95),
+        inset 0 -2px 4px rgba(0,0,0,.03);
 }
 
 .omset-total-card h3{
 
     margin:0;
 
-    font-size:16px;
+    font-size:12px;
 
     font-weight:500;
 
@@ -50,9 +72,9 @@ OMSET
 
     margin-top:14px;
 
-    font-size:42px;
+    font-size:30px;
 
-    font-weight:700;
+    font-weight:800;
 
     color:var(--green);
 

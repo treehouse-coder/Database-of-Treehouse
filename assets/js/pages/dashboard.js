@@ -63,7 +63,7 @@ const Dashboard = {
 
                     <h2 id="dashboard-sales">Rp 0</h2>
 
-                    <small>Belum ada data</small>
+                    
 
                 </div>
 
@@ -73,7 +73,7 @@ const Dashboard = {
 
                     <h2 id="dashboard-expense">Rp 0</h2>
 
-                    <small>Belum ada data</small>
+                    
 
                 </div>
 
@@ -83,7 +83,7 @@ const Dashboard = {
 
                     <h2 id="dashboard-profit">Rp 0</h2>
 
-                    <small>Belum ada data</small>
+                    
 
                 </div>
 
@@ -93,7 +93,7 @@ const Dashboard = {
 
                     <h2 id="dashboard-transaction">0</h2>
 
-                    <small>Belum ada data</small>
+                    
 
                 </div>
 

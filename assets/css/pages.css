@@ -96,35 +96,50 @@ DASHBOARD
 
     background:#FFF;
 
-    border-radius:18px;
+    border-radius:16px;
 
-    padding:22px;
+    padding:20px;
 
-    min-height:135px;
+    min-height:120px;
 
-    border:1px solid rgba(0,0,0,.05);
+    border:1px solid rgba(255,255,255,.8);
 
     box-shadow:
+        /* Bayangan utama */
+        0 20px 45px rgba(0,0,0,.10),
 
-        0 12px 28px rgba(0,0,0,.05);
+        /* Bayangan dekat */
+        0 8px 18px rgba(0,0,0,.06),
 
-    transition:.25s;
+        /* Highlight atas */
+        inset 0 1px 0 rgba(255,255,255,.9),
+
+        /* Shadow bawah dalam */
+        inset 0 -2px 4px rgba(0,0,0,.03);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    position:relative;
 
 }
 
 .dashboard-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px);
 
     box-shadow:
-
-        0 18px 38px rgba(0,0,0,.08);
+        0 28px 60px rgba(0,0,0,.14),
+        0 12px 24px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.95),
+        inset 0 -2px 4px rgba(0,0,0,.03);
 
 }
 
 .dashboard-card h3{
 
-    font-size:14px;
+    font-size:10px;
 
     font-weight:500;
 
@@ -136,23 +151,15 @@ DASHBOARD
 
     margin-top:14px;
 
-    font-size:34px;
+    font-size:20px;
 
-    font-weight:700;
+    font-weight:900;
 
     color:var(--green);
 
 }
 
-.dashboard-card small{
 
-    display:block;
-
-    margin-top:14px;
-
-    color:#9AA0A6;
-
-}
 
 
 /*======================================

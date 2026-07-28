@@ -55,17 +55,21 @@ page
 
             <!-- Total Omset -->
 
-            <div class="card omset-total-card">
+<div class="omset-total-wrapper">
 
-                <h3>Total Omset</h3>
+    <div class="card omset-total-card">
 
-                <h1 id="omset-total">
+        <h3>Total Omset</h3>
 
-                    Load
+        <h1 id="omset-total">
 
-                </h1>
+            Load
 
-            </div>
+        </h1>
+
+    </div>
+
+</div>
 
 
             <!-- Payment -->
