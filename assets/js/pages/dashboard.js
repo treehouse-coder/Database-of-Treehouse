@@ -16,7 +16,13 @@ const Dashboard = {
 
     this.event();
 
-    this.load();
+    requestAnimationFrame(()=>{
+
+        this.load();
+
+    });
+
+
 
 },
 
@@ -109,7 +115,7 @@ const Dashboard = {
 
                 <div class="chart-placeholder">
 
-                Grafik akan ditampilkan di sini
+                    <canvas id="dashboardChart"></canvas>
 
                 </div>
 
@@ -209,6 +215,73 @@ async load(){
 
         transaction :
             response.data.transaction || 0
+
+    });
+
+    await this.loadChart();
+
+},
+
+/*======================================
+LOAD CHART
+======================================*/
+
+async loadChart(){
+
+    const result =
+        await API.getDashboardChart();
+
+    console.log(result);
+
+    if(!result.success){
+
+        return;
+
+    }
+
+    this.renderChart(
+
+        result.labels,
+
+        result.values
+
+    );
+
+
+    },
+
+/*======================================
+RENDER CHART
+======================================*/
+
+renderChart(labels, values){
+
+    const canvas =
+        document.getElementById("dashboardChart");
+
+    if(!canvas){
+
+        return;
+
+    }
+
+    new Chart(canvas,{
+
+        type:"line",
+
+        data:{
+
+            labels:labels,
+
+            datasets:[{
+
+                label:"Omset",
+
+                data:values
+
+            }]
+
+        }
 
     });
 

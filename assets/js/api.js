@@ -53,7 +53,30 @@ async setGlobalPeriod(month, year){
 
 },
 
+/*======================================
+GET DASHBOARD CHART
+======================================*/
 
+async getDashboardChart(){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=getDashboardChart" +
+
+            "&branch=" + APP.filter.branch +
+
+            "&month=" + APP.filter.month +
+
+            "&year=" + APP.filter.year
+
+        );
+
+    return await response.json();
+
+},
     /*======================================
     GET DASHBOARD
     ======================================*/
