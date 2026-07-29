@@ -53,17 +53,21 @@ const Expense = {
 
             <!-- Total Expense -->
 
-            <div class="card omset-total-card">
+            <div class="omset-total-wrapper">
 
-                <h3>Total Expense</h3>
+    <div class="card omset-total-card">
 
-                <h1 id="expense-total">
+        <h3>Total Expense</h3>
 
-                    Rp 0
+        <h1 id="expense-total">
 
-                </h1>
+            Load
 
-            </div>
+        </h1>
+
+    </div>
+
+</div>
 
 
             <!-- Expense Category -->
