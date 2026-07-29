@@ -87,7 +87,7 @@ async getDashboardChart(){
 
         this.url +
 
-        "?action=dashboardOmset"
+        "?action=dashboard"
 
         + "&branch=" + encodeURIComponent(filter.branch)
 
