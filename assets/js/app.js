@@ -20,6 +20,7 @@ const APP = {
 
 };
 
+
 /*======================================
 INITIALIZE
 ======================================*/
@@ -30,6 +31,8 @@ document.addEventListener(
 
     function(){
 
+        Auth.check();
+
         setToday();
 
 Filter.init();
@@ -39,6 +42,34 @@ Modal.init();
 SuccessModal.init();
 
 SignatureModal.init();
+
+/*======================================
+LOGOUT
+======================================*/
+
+const logout =
+
+    document.getElementById(
+
+        "btnLogout"
+
+    );
+
+if(logout){
+
+    logout.addEventListener(
+
+        "click",
+
+        ()=>{
+
+            Auth.logout();
+
+        }
+
+    );
+
+}
 
 const lastPage =
 

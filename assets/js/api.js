@@ -115,6 +115,33 @@ async getDashboardChart(){
 },
 
 /*======================================
+LOGIN
+======================================*/
+
+async login(username, password){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=login"
+
+            + "&username=" +
+
+            encodeURIComponent(username)
+
+            + "&password=" +
+
+            encodeURIComponent(password)
+
+        );
+
+    return await response.json();
+
+},
+
+/*======================================
 GET OMSET 
 ======================================*/
 

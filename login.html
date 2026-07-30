@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Treehouse Login</title>
+
+    <link rel="stylesheet"
+          href="assets/css/login.css">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h1>Treehouse POS</h1>
+
+    <input
+        id="username"
+        type="text"
+        placeholder="Username">
+
+    <input
+        id="password"
+        type="password"
+        placeholder="Password">
+
+    <button id="btnLogin">
+
+        LOGIN
+
+    </button>
+
+    <p id="loginMessage"></p>
+
+</div>
+
+<script>
+if(
+    sessionStorage.getItem("treehouse_login") === "true"
+){
+    window.location.href = "index.html";
+}
+</script>
+
+<script src="assets/js/api.js"></script>
+
+<script src="assets/js/auth.js"></script>
+
+<script src="assets/js/login.js"></script>
+
+</body>
+
+</html>
