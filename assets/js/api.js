@@ -228,6 +228,31 @@ async getExpenseTable(filter){
 },
 
 /*======================================
+SEARCH EXPENSE
+======================================*/
+
+async searchExpense(nama, branch){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=searchExpense" +
+
+            "&nama=" +
+            encodeURIComponent(nama) +
+
+            "&branch=" +
+            encodeURIComponent(branch)
+
+        );
+
+    return await response.json();
+
+},
+
+/*======================================
 PRINT MEAL PDF
 ======================================*/
 

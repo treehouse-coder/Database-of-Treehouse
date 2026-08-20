@@ -157,6 +157,294 @@ SCROLLBAR
 
 }
 
+/*======================================
+EXPENSE SEARCH BUTTON
+======================================*/
+
+.expense-search-button {
+
+    width: auto;
+
+    min-width: 100px;
+
+    padding: 10px 20px;
+
+    background: #015704;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.expense-search-button:hover {
+
+    background: #013f0394;
+
+}
+
+
+/*======================================
+EXPENSE SEARCH MODAL
+======================================*/
+
+.expense-search-modal {
+
+    width: 100%;
+
+}
+
+
+/*======================================
+SEARCH FORM
+======================================*/
+
+.expense-search-form {
+
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+}
+
+
+.expense-search-input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+.expense-search-input:focus {
+
+    border-color: #015704;
+
+}
+
+
+/*======================================
+SEARCH BUTTON
+======================================*/
+
+#expense-search-submit {
+
+    width: auto;
+
+    min-width: 100px;
+
+    padding: 10px 18px;
+
+    background: #015704;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+#expense-search-submit:hover {
+
+    background: #013f0382;
+
+}
+
+/*======================================
+SEARCH RESULT
+======================================*/
+
+.expense-search-result {
+
+    width: 100%;
+
+}
+
+
+/*======================================
+SEARCH COUNT
+======================================*/
+
+.expense-search-count {
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #555;
+
+}
+
+
+/*======================================
+TABLE WRAPPER
+======================================*/
+
+.expense-search-table-wrapper {
+
+    width: 100%;
+
+    max-height: 400px;
+
+    overflow-y: auto;
+
+    overflow-x: auto;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+}
+
+
+/*======================================
+TABLE
+======================================*/
+
+.expense-search-table {
+
+    width: 100%;
+
+    min-width: 600px;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+}
+
+
+/*======================================
+TABLE HEADER
+======================================*/
+
+.expense-search-table thead {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+}
+
+
+.expense-search-table th {
+
+    padding: 11px 12px;
+
+    text-align: left;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+/*======================================
+TABLE CELL
+======================================*/
+
+.expense-search-table td {
+
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #eee;
+
+    white-space: nowrap;
+
+}
+
+
+/*======================================
+RIGHT ALIGN
+======================================*/
+
+.expense-search-table .text-right {
+
+    text-align: right;
+
+}
+
+
+/*======================================
+EMPTY / LOADING
+======================================*/
+
+.expense-search-empty,
+.expense-search-loading {
+
+    padding: 30px 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+
+/*======================================
+MOBILE
+======================================*/
+
+@media (max-width: 600px){
+
+    .expense-search-form {
+
+        flex-direction: column;
+
+    }
+
+
+    #expense-search-submit {
+
+        width: 100%;
+
+    }
+
+
+    .expense-search-table-wrapper {
+
+        max-height: 350px;
+
+    }
+
+}
+
+
 
 /*======================================
 TABLET
@@ -212,6 +500,28 @@ MOBILE
     padding:10px 12px;
 
 }
+
+
+
+    .expense-search-form {
+
+        flex-direction: column;
+
+    }
+
+
+    #expense-search-submit {
+
+        width: 100%;
+
+    }
+
+
+    .expense-search-table-wrapper {
+
+        max-height: 350px;
+
+    }
 
 }
 
