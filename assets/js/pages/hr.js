@@ -163,17 +163,9 @@ show(page){
 
         case "dashboard":
 
-            content.innerHTML = `
+    HrDashboard.init();
 
-                <div class="card">
-
-                    <h2>Dashboard HR</h2>
-
-                </div>
-
-            `;
-
-            break;
+    break;
 
 
         case "employee":
