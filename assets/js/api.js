@@ -494,6 +494,25 @@ async getSalary15Table(filter){
 },
 
 /*======================================
+GET HR DASHBOARD
+======================================*/
+
+async getHRDashboard(){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=hrDashboard"
+
+        );
+
+    return await response.json();
+
+},
+
+/*======================================
 GET EMPLOYEE
 ======================================*/
 

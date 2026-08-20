@@ -213,45 +213,58 @@ const HrDashboard = {
     },
 
 
-    /*==================================
-    LOAD
-    ==================================*/
+ /*==================================
+LOAD
+==================================*/
 
-    async load(){
+async load(){
 
-        const data =
-            await HrAPI.dashboard();
+    const response =
+        await API.getHRDashboard();
+
+    if(!response.success){
+
+        console.error(
+            response.message
+        );
+
+        return;
+
+    }
+
+    const data =
+        response.data;
 
 
-        document
+    document
         .getElementById("hrActiveEmployee")
         .textContent =
             data.activeEmployee;
 
 
-        document
+    document
         .getElementById("hrKarawaciMale")
         .textContent =
             data.karawaciMale;
 
 
-        document
+    document
         .getElementById("hrKarawaciFemale")
         .textContent =
             data.karawaciFemale;
 
 
-        document
+    document
         .getElementById("hrGlazeMale")
         .textContent =
             data.glazeMale;
 
 
-        document
+    document
         .getElementById("hrGlazeFemale")
         .textContent =
             data.glazeFemale;
 
-    }
+}
 
 };
