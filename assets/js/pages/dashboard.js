@@ -8,6 +8,7 @@ const Dashboard = {
     INITIALIZE
     ==================================*/
 
+    chart: null,
     init(){
 
     renderPage(this.page());
@@ -265,7 +266,15 @@ renderChart(labels, values){
 
     }
 
-    new Chart(canvas,{
+    if(this.chart){
+
+        this.chart.destroy();
+
+        this.chart = null;
+
+    }
+
+    this.chart = new Chart(canvas,{
 
         type:"line",
 
