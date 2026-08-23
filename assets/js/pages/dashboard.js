@@ -39,11 +39,7 @@ const Dashboard = {
 
                 <div>
 
-                    <h2 class="page-title">
-
-                        Dashboard
-
-                    </h2>
+                    
 
                     <p class="page-subtitle"
                         id="dashboard-period">
@@ -232,7 +228,7 @@ async loadChart(){
     const result =
         await API.getDashboardChart();
 
-    console.log(result);
+    
 
     if(!result.success){
 

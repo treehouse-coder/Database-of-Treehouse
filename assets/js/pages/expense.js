@@ -35,9 +35,7 @@ page(){
 
             <div>
 
-                <h2 class="page-title">
-                    Expense
-                </h2>
+                
 
                 <p class="page-subtitle"
                    id="expense-period">

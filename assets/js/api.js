@@ -96,7 +96,7 @@ async getDashboardChart(){
         + "&year=" + filter.year;
 
 
-    console.log("REQUEST URL :", url);
+    
 
 
     const response =
@@ -107,7 +107,7 @@ async getDashboardChart(){
         await response.json();
 
 
-    console.log("API RESPONSE :", json);
+    
 
 
     return json;
@@ -134,6 +134,36 @@ async login(username, password){
             + "&password=" +
 
             encodeURIComponent(password)
+
+        );
+
+    return await response.json();
+
+},
+
+/*======================================
+GET OMSET DAILY CHART
+======================================*/
+
+async getOmsetDailyChart(){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=getOmsetDailyChart" +
+
+            "&branch=" +
+            encodeURIComponent(
+                APP.filter.branch
+            ) +
+
+            "&month=" +
+            APP.filter.month +
+
+            "&year=" +
+            APP.filter.year
 
         );
 

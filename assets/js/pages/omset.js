@@ -3,7 +3,7 @@ OMSET MODULE
 ======================================*/
 
 const Omset = {
-
+chart: null,
 
     /*==================================
 INITIALIZE
@@ -35,12 +35,7 @@ page
 
                 <div>
 
-                    <h2 class="page-title">
-
-                        Omset
-
-                    </h2>
-
+                    
                     <p class="page-subtitle"
                        id="omset-period">
 
@@ -283,6 +278,8 @@ async load(){
 
     this.render(response.data);
 
+    await this.loadChart();
+
 },
 
     /*==================================
@@ -360,6 +357,124 @@ renderLoading(){
 
 },
 
+/*======================================
+LOAD CHART
+======================================*/
+
+async loadChart(){
+
+    const result =
+        await API.getOmsetDailyChart();
+
+    console.log(
+        "OMSET DAILY CHART:",
+        result
+    );
+
+    if(!result.success){
+
+        console.error(
+            result.message
+        );
+
+        return;
+
+    }
+
+    this.renderChart(
+        result.labels,
+        result.values
+    );
+
+},
+
+/*======================================
+RENDER CHART
+======================================*/
+
+renderChart(labels, values){
+
+    const container =
+        document.getElementById(
+            "omset-chart"
+        );
+
+    if(!container){
+
+        return;
+
+    }
+
+
+    /*==================================
+    HAPUS CHART LAMA
+    ==================================*/
+
+    if(this.chart){
+
+        this.chart.destroy();
+
+        this.chart = null;
+
+    }
+
+
+    container.innerHTML = `
+
+        <canvas id="omsetDailyChart"></canvas>
+
+    `;
+
+
+    const canvas =
+        document.getElementById(
+            "omsetDailyChart"
+        );
+
+
+    if(!canvas){
+
+        return;
+
+    }
+
+
+    /*==================================
+    BUAT CHART BARU
+    ==================================*/
+
+    this.chart = new Chart(canvas,{
+
+        type:"line",
+
+        data:{
+
+            labels:labels,
+
+            datasets:[{
+
+                label:"Omset",
+
+                data:values,
+
+                tension:0.3
+
+            }]
+
+        },
+
+        options:{
+
+            responsive:true,
+
+            maintainAspectRatio:false
+
+        }
+
+    });
+
+},
+
 /*==================================
 REFRESH
 ==================================*/
@@ -369,6 +484,8 @@ refresh(){
     this.period();
 
     this.load();
+
+    
 
 }
 
