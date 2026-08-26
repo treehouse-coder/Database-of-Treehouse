@@ -4,6 +4,7 @@ OMSET MODULE
 
 const Omset = {
 chart: null,
+customerChart: null,
 
     /*==================================
 INITIALIZE
@@ -147,6 +148,27 @@ page
 
             </div>
 
+
+            <!-- Grafik Jumlah Pelanggan -->
+
+<div class="card">
+
+    <div class="card-header">
+
+        <h3>
+            Jumlah Pelanggan Harian
+        </h3>
+
+    </div>
+
+    <div id="customer-daily-chart">
+
+        Grafik akan ditampilkan di sini
+
+    </div>
+
+</div>
+
         `;
 
     },
@@ -280,6 +302,8 @@ async load(){
 
     await this.loadChart();
 
+    await this.loadCustomerChart();
+
 },
 
     /*==================================
@@ -385,6 +409,120 @@ async loadChart(){
         result.labels,
         result.values
     );
+
+},
+
+/*======================================
+LOAD CUSTOMER DAILY CHART
+======================================*/
+
+async loadCustomerChart(){
+
+    const result =
+        await API.getCustomerDailyChart();
+
+    console.log(
+        "CUSTOMER DAILY CHART:",
+        result
+    );
+
+    if(!result.success){
+
+        console.error(
+            result.message
+        );
+
+        return;
+
+    }
+
+    this.renderCustomerChart(
+        result.labels,
+        result.values
+    );
+
+},
+
+/*======================================
+RENDER CUSTOMER DAILY CHART
+======================================*/
+
+renderCustomerChart(labels, values){
+
+    const container =
+        document.getElementById(
+            "customer-daily-chart"
+        );
+
+    if(!container){
+
+        return;
+
+    }
+
+    /*==================================
+    HAPUS CHART LAMA
+    ==================================*/
+
+    if(this.customerChart){
+
+        this.customerChart.destroy();
+
+        this.customerChart = null;
+
+    }
+
+    container.innerHTML = `
+
+        <canvas id="customerDailyChart"></canvas>
+
+    `;
+
+    const canvas =
+        document.getElementById(
+            "customerDailyChart"
+        );
+
+    if(!canvas){
+
+        return;
+
+    }
+
+    /*==================================
+    BUAT CHART BARU
+    ==================================*/
+
+    this.customerChart =
+        new Chart(canvas,{
+
+            type:"line",
+
+            data:{
+
+                labels:labels,
+
+                datasets:[{
+
+                    label:"Jumlah Pelanggan",
+
+                    data:values,
+
+                    tension:0.3
+
+                }]
+
+            },
+
+            options:{
+
+                responsive:true,
+
+                maintainAspectRatio:false
+
+            }
+
+        });
 
 },
 

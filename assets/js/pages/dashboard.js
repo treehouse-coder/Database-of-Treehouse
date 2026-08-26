@@ -9,6 +9,7 @@ const Dashboard = {
     ==================================*/
 
     chart: null,
+    customerChart: null,
     init(){
 
     renderPage(this.page());
@@ -104,7 +105,7 @@ const Dashboard = {
 
                 <h3>
 
-                Omset 7 Hari Terakhir
+                Summary
 
                 </h3>
 
@@ -117,6 +118,26 @@ const Dashboard = {
                 </div>
 
             </div>
+
+            <!-- Customer Chart -->
+
+<div class="card dashboard-chart">
+
+    <div class="card-header">
+
+        <h3>
+            Jumlah Pelanggan Setiap Bulan
+        </h3>
+
+    </div>
+
+    <div class="chart-placeholder">
+
+        <canvas id="customerChart"></canvas>
+
+    </div>
+
+</div>
 
         `;
 
@@ -216,6 +237,7 @@ async load(){
     });
 
     await this.loadChart();
+    await this.loadCustomerChart();
 
 },
 
@@ -246,6 +268,32 @@ async loadChart(){
 
 
     },
+
+    /*======================================
+LOAD CUSTOMER CHART
+======================================*/
+
+async loadCustomerChart(){
+
+    const result =
+        await API.getCustomerChart();
+
+    if(!result.success){
+
+        console.error(
+            result.message
+        );
+
+        return;
+
+    }
+
+    this.renderCustomerChart(
+        result.labels,
+        result.values
+    );
+
+},
 
 /*======================================
 RENDER CHART
@@ -289,6 +337,78 @@ renderChart(labels, values){
         }
 
     });
+
+},
+
+/*======================================
+RENDER CUSTOMER CHART
+======================================*/
+
+renderCustomerChart(labels, values){
+
+    const canvas =
+        document.getElementById(
+            "customerChart"
+        );
+
+    if(!canvas){
+
+        return;
+
+    }
+
+    if(this.customerChart){
+
+        this.customerChart.destroy();
+
+        this.customerChart = null;
+
+    }
+
+    this.customerChart =
+        new Chart(canvas,{
+
+            type:"line",
+
+            data:{
+
+                labels:labels,
+
+                datasets:[{
+
+                    label:"Jumlah Pelanggan",
+
+                    data:values
+
+                }]
+
+            },
+
+            options:{
+
+                responsive:true,
+
+                maintainAspectRatio:false,
+
+                scales:{
+
+                    y:{
+
+                        beginAtZero:true,
+
+                        ticks:{
+
+                            precision:0
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
 
 },
 

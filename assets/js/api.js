@@ -77,6 +77,36 @@ async getDashboardChart(){
     return await response.json();
 
 },
+
+/*======================================
+GET CUSTOMER CHART
+======================================*/
+
+async getCustomerChart(){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=customerChart" +
+
+            "&branch=" +
+            encodeURIComponent(
+                APP.filter.branch
+            ) +
+
+            "&year=" +
+            encodeURIComponent(
+                APP.filter.year
+            )
+
+        );
+
+    return await response.json();
+
+},
+
     /*======================================
     GET DASHBOARD
     ======================================*/
@@ -164,6 +194,40 @@ async getOmsetDailyChart(){
 
             "&year=" +
             APP.filter.year
+
+        );
+
+    return await response.json();
+
+},
+
+/*======================================
+GET CUSTOMER DAILY CHART
+======================================*/
+
+async getCustomerDailyChart(){
+
+    const response =
+        await fetch(
+
+            this.url +
+
+            "?action=getCustomerDailyChart" +
+
+            "&branch=" +
+            encodeURIComponent(
+                APP.filter.branch
+            ) +
+
+            "&month=" +
+            encodeURIComponent(
+                APP.filter.month
+            ) +
+
+            "&year=" +
+            encodeURIComponent(
+                APP.filter.year
+            )
 
         );
 
