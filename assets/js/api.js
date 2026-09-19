@@ -150,27 +150,65 @@ LOGIN
 
 async login(username, password){
 
+    const start = performance.now();
+
+    const url =
+
+        this.url +
+
+        "?action=login" +
+
+        "&username=" +
+
+        encodeURIComponent(username) +
+
+        "&password=" +
+
+        encodeURIComponent(password);
+
+    console.log(
+        "LOGIN START:",
+        new Date().toISOString()
+    );
+
+    const fetchStart = performance.now();
+
     const response =
-        await fetch(
+        await fetch(url, {
+            method: "GET",
+            cache: "no-store"
+        });
 
-            this.url +
+    const fetchEnd = performance.now();
 
-            "?action=login"
+    console.log(
+        "LOGIN FETCH:",
+        Math.round(fetchEnd - fetchStart),
+        "ms"
+    );
 
-            + "&username=" +
+    const jsonStart = performance.now();
 
-            encodeURIComponent(username)
+    const result =
+        await response.json();
 
-            + "&password=" +
+    const jsonEnd = performance.now();
 
-            encodeURIComponent(password)
+    console.log(
+        "LOGIN JSON:",
+        Math.round(jsonEnd - jsonStart),
+        "ms"
+    );
 
-        );
+    console.log(
+        "LOGIN TOTAL:",
+        Math.round(performance.now() - start),
+        "ms"
+    );
 
-    return await response.json();
+    return result;
 
 },
-
 /*======================================
 GET OMSET DAILY CHART
 ======================================*/
