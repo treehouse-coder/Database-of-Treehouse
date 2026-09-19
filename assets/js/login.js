@@ -27,6 +27,11 @@ async function login(){
         document
             .getElementById("loginMessage");
 
+    const button =
+
+        document
+            .getElementById("btnLogin");
+
     message.textContent = "";
 
     if(!username || !password){
@@ -39,31 +44,63 @@ async function login(){
 
     }
 
-    const result =
+    /*==================================
+    LOADING
+    ==================================*/
 
-        await API.login(
+    button.disabled = true;
 
-            username,
+    button.textContent = "LOGIN...";
 
-            password
+    message.textContent = "Memproses login...";
 
-        );
+    try{
 
-    if(result.success){
+        const result =
 
-    Auth.login(
+            await API.login(
 
-    result.username
+                username,
 
-    );
+                password
 
-    window.location.href = "index.html";
+            );
 
-}else{
+        if(result.success){
+
+            Auth.login(
+
+                result.username
+
+            );
+
+            window.location.href = "index.html";
+
+        }else{
+
+            message.textContent =
+
+                result.message;
+
+        }
+
+    }catch(error){
+
+        console.error(error);
 
         message.textContent =
 
-            result.message;
+            "Gagal terhubung ke server.";
+
+    }finally{
+
+        /*==============================
+        KEMBALIKAN TOMBOL
+        ==============================*/
+
+        button.disabled = false;
+
+        button.textContent = "LOGIN";
 
     }
 

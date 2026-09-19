@@ -58,6 +58,20 @@ body{
 
     height:44px;
 
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.login-box button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
 }
 
 #loginMessage{
