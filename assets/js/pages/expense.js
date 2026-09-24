@@ -688,8 +688,7 @@ render(data){
     $("#expense-uangmakan").textContent =
         formatRupiah(data.uangmakan);
 
-    $("#expense-lainnya").textContent =
-        formatRupiah(data.lainnya);
+    $("#expense-lainnya").textContent = "";
 
     $("#expense-item").textContent =
         data.totalitem;

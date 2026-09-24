@@ -263,15 +263,15 @@ async preview(){
 
 },
 
-  /*==================================
+
+
+/*==================================
 LOAD
 ==================================*/
 
 async load(){
 
-   
-
-   $("#omset-total").textContent = "...";
+    $("#omset-total").textContent = "...";
 
     $("#cash-total").textContent = "...";
 
@@ -285,26 +285,94 @@ async load(){
 
     $("#giftcard-total").textContent = "...";
 
-     this.period();
 
-    const response =
-        await API.getOmset(APP.filter);
+    this.period();
 
-    if(!response.success){
 
-        console.error(response.message);
+    /*==================================
+    GET LOCAL DATA
+    ==================================*/
+
+    let localData =
+        await DataSync.getOmset();
+
+
+    /*==================================
+    JIKA BELUM ADA
+    DOWNLOAD DARI API
+    ==================================*/
+
+    if(!localData){
+
+        console.log(
+            "OMSET LOCAL TIDAK ADA - DOWNLOAD"
+        );
+
+
+        try{
+
+            await DataSync.omset();
+
+
+            localData =
+                await DataSync.getOmset();
+
+        }
+
+        catch(error){
+
+            console.error(
+                "Gagal download omset:",
+                error
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    /*==================================
+    DATA TIDAK DITEMUKAN
+    ==================================*/
+
+    if(!localData){
+
+        console.error(
+            "Data omset tidak tersedia."
+        );
 
         return;
 
     }
 
-    this.render(response.data);
+
+    /*==================================
+    RENDER LOCAL DATA
+    ==================================*/
+
+    console.log(
+        "OMSET MENGGUNAKAN LOCAL DATA:",
+        localData
+    );
+
+
+    this.render(
+        localData.data
+    );
+
+
+    /*==================================
+    CHART
+    ==================================*/
 
     await this.loadChart();
 
     await this.loadCustomerChart();
 
 },
+
 
     /*==================================
 PERIOD

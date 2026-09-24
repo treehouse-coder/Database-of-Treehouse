@@ -21,6 +21,7 @@ const APP = {
 };
 
 
+
 /*======================================
 INITIALIZE
 ======================================*/
@@ -29,71 +30,86 @@ document.addEventListener(
 
     "DOMContentLoaded",
 
-    function(){
+    async function(){
 
         Auth.check();
 
         setToday();
 
-Filter.init();
 
-Modal.init();
+        /*======================================
+        FILTER
+        ======================================*/
 
-SuccessModal.init();
+        await Filter.init();
 
-SignatureModal.init();
 
-/*======================================
-LOGOUT
-======================================*/
+        /*======================================
+        LOCAL DATA SYNC
+        ======================================*/
 
-const logout =
+        await AppSync.start();
 
-    document.getElementById(
 
-        "btnLogout"
+        /*======================================
+        MODAL
+        ======================================*/
 
-    );
+        Modal.init();
 
-if(logout){
+        SuccessModal.init();
 
-    logout.addEventListener(
+        SignatureModal.init();
 
-        "click",
 
-        ()=>{
+        /*======================================
+        LOGOUT
+        ======================================*/
 
-            Auth.logout();
+        const logout =
+            document.getElementById(
+                "btnLogout"
+            );
+
+
+        if(logout){
+
+            logout.addEventListener(
+
+                "click",
+
+                ()=>{
+
+                    Auth.logout();
+
+                }
+
+            );
 
         }
 
-    );
 
-}
+        /*======================================
+        LAST PAGE
+        ======================================*/
 
-const lastPage =
-
-    localStorage.getItem(
-
-        "treehouse_last_page"
-
-    ) || "dashboard";
+        const lastPage =
+            localStorage.getItem(
+                "treehouse_last_page"
+            ) || "dashboard";
 
 
-const menu =
-
-    document.querySelector(
-
-        `.menu a[data-page="${lastPage}"]`
-
-    );
+        const menu =
+            document.querySelector(
+                `.menu a[data-page="${lastPage}"]`
+            );
 
 
-if(menu){
+        if(menu){
 
-    menu.click();
+            menu.click();
 
-}
+        }
 
     }
 

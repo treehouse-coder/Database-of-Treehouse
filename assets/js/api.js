@@ -273,8 +273,10 @@ async getCustomerDailyChart(){
 
 },
 
+
+
 /*======================================
-GET OMSET 
+GET OMSET
 ======================================*/
 
 async getOmset(filter){
@@ -286,7 +288,20 @@ async getOmset(filter){
 
             "?action=omset"
 
-            + "&branch=" + encodeURIComponent(filter.branch)
+            + "&branch=" +
+                encodeURIComponent(
+                    filter.branch
+                )
+
+            + "&month=" +
+                encodeURIComponent(
+                    filter.month
+                )
+
+            + "&year=" +
+                encodeURIComponent(
+                    filter.year
+                )
 
         );
 
@@ -308,8 +323,19 @@ async getExpense(filter){
             "?action=expense"
 
             + "&branch=" +
+                encodeURIComponent(
+                    filter.branch
+                )
 
-            encodeURIComponent(filter.branch)
+            + "&month=" +
+                encodeURIComponent(
+                    filter.month
+                )
+
+            + "&year=" +
+                encodeURIComponent(
+                    filter.year
+                )
 
         );
 
